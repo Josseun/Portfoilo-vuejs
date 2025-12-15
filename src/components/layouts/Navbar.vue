@@ -1,22 +1,22 @@
 <template>
   <header>
     <div class="flex justify-between items-center p-8 lg:px-12 relative z-20">
-      <div class="dark:text-white text-3xl font-bold">LOGO</div>
+       <div :class="['dark: text-3xl font-black',isDarkMode ? 'text-white' : 'text-primary']">LOGO</div>
 
       <div class="md:hidden z-30">
         <button
-          class="block focus:outline-none"
+          class="block focus:outline-none bg-red-700"
           @click="isMenuOpen = !isMenuOpen"
         >
           <span
             v-if="isMenuOpen"
-            class="text-5xl md:text-primary text-white dark:text-white"
+            class="text-5xl md:text-primary text-white"
           >
             <Icon class="material-symbols:close-rounded" />
           </span>
           <span
             v-else
-            class="text-5xl md:text-primary text-white dark:text-white"
+            class="text-5xl md:text-primary text-white"
           >
             <Icon icon="material-symbols:menu-rounded" />
           </span>
@@ -36,7 +36,7 @@
           <li v-for="(item, index) in Menu" :key="index">
             <a
               :href="item.href"
-              class="block transition ease-linear md:text-lg lg:text-xl font-bold text-white md:text-primary hover:text-secondary dark:text-white dark:hover:text-secondary"
+        :class="['block transition ease-linear md:text-lg lg:text-xl font-bold hover:text-secondary',isDarkMode ? 'text-white' : 'text-primary']"
               @click="ScrollToSection(item.href)"
             >
               {{ item.name }}
@@ -45,10 +45,10 @@
         </ul>
         <button
           @click="toggleDarkMode"
-          class="text-white ml-20 z-20 hidden md:block"
+          :class="['text-white ml-20 z-20 hidden md:block', isDarkMode ? 'bg-blue-900' : 'bg-red-700']"
         >
           <Icon
-            v-if="isDarkMode"
+            v-if="!isDarkMode"
             icon="line-md:moon-filled"
             class="text-5xl text-primary"
           />
@@ -65,8 +65,7 @@
 <script setup>
 import { Icon } from "@iconify/vue";
 import { ref } from "vue";
-// document.documentElement.classList.toggle('dark');
-
+import { useDarkMode } from "../../composables/DarkMode";
 const isMenuOpen = ref(false);
 const Menu = ref([
   { name: "Services", href: "#services" },
@@ -84,20 +83,6 @@ const ScrollToSection = (href) => {
   }
 };
 
-const isDarkMode = ref(localStorage.getItem("theme") === "dark");
+const { isDarkMode, toggleDarkMode } = useDarkMode();
 
-const toggleDarkMode = () => {
-  const html = document.documentElement;
-  if (isDarkMode.value) {
-    html.classList.remove("dark");
-    localStorage.setItem("theme", "light");
-  } else {
-    html.classList.add("dark");
-    localStorage.setItem("theme", "dark");
-  }
-
-  isDarkMode.value = !isDarkMode.value;
-};
-
-defineExpose({ isDarkMode });
 </script>

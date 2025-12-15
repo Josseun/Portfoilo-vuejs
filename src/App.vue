@@ -1,16 +1,19 @@
 <template>
   <div :class="['min-h-screen', isDarkMode ? 'bg-[#080326]' : 'bg-[#d4ebf8]']">
-    <Navbar ref="navbarRef" />
+    <Navbar />
+    <HeroSection />
   </div>
 </template>
 
 <script setup>
-import { defineAsyncComponent, ref, computed } from "vue";
+import { defineAsyncComponent } from "vue";
+import HeroSection from "./components/layouts/HeroSection.vue";
+import { useDarkMode } from "./composables/DarkMode";
+
+const { isDarkMode } = useDarkMode();
 
 const Navbar = defineAsyncComponent(() =>
   import("@/components/layouts/Navbar.vue")
 );
+</script> 
 
-const navbarRef = ref(null);
-const isDarkMode = computed(() => navbarRef.value?.isDarkMode || false);
-</script>
