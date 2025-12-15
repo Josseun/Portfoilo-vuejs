@@ -1,5 +1,6 @@
+```vue
 <template>
-  <section class="flex items-center justify-center min-h-screen mt-20 lg:mt-0">
+  <section class="flex items-center justify-center min-h-screen mt -20 lg:mt-0">
     <header
       :class="[
         'absolute w-1/2 aspect-16/5 -skew-x-12 rounded-full bg-linear-to-r from-[#00c6cc] via-[#785ae4] to-secondary blur-[100px] left-10 top-0 hidden md:block',
@@ -48,19 +49,15 @@
         </div>
       </header>
       <aside
-        class="flex justify-center lg:justify-end mt-20 lg:mt-0 items-center flex-wrap"
+        class="container flex justify-center lg:justify-end mt-20 lg:mt-0 items-center flex-wrap"
       >
         <figure
-          class="relative m-7.5 md:w-105 md:h-105 md:before:w-112.5 w-70 h-87.5 before:w-75 before:h-75 before:border-25 before:border-primary before:shadow-[7px_7px_21px_secondary,-7px_-7px_21px_secondary]"
+          class="card relative m-7.5 md:w-105 md:h-105 md:before:w-112.5 w-70 h-87.5 before:w-75 before:h-75 before:border-25 before:border-primary before:shadow-[7px_7px_21px_secondary,-7px_-7px_21px_secondary]"
         >
           <div
             class="relative w-full h-full bg-cover transform translate-x-2.5 translate-y-2.5"
           >
-            <img
-              src="@\assets\Images\King.jpg"
-              alt="Hero Picture"
-              class="rounded-2xl object-contain"
-            />
+            <img src="@\assets\Images\King.jpg" alt="Hero Picture" />
           </div>
         </figure>
       </aside>
@@ -102,3 +99,5 @@ const { isDarkMode } = useDarkMode();
   filter: url(#wavy1);
 }
 </style>
+
+```
