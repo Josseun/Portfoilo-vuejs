@@ -1,20 +1,20 @@
 ```vue
 <template>
-  <section class="flex items-center justify-center min-h-screen mt -20 lg:mt-0">
+  <section
+  data-aos="zoom-in"
+  class="flex items-center justify-center min-h-screen mt-20 lg:mt-0">
     <header
-      :class="[
-        'absolute w-1/2 aspect-16/5 -skew-x-12 rounded-full bg-linear-to-r from-[#00c6cc] via-[#785ae4] to-secondary blur-[100px] left-10 top-0 hidden md:block',
+      :class="['absolute w-1/2 aspect-16/5 -skew-x-12 rounded-full bg-gradient-to-r from-[#00c6cc] via-[#785ae4] to-secondary blur-[100px] left-10 top-0 hidden md:block',
         isDarkMode ? 'opacity-20 ' : ' opacity-30',
       ]"
     ></header>
     <header
-      :class="[
-        'absolute w-1/2 aspect-16/5 -skew-x-12 rounded-full bg-linear-to-r from-[#00c6cc] via-[#785ae4] to-secondary blur-[100px] right-10 button-0 hidden md:block',
+      :class="['absolute w-1/2 aspect-16/5 -skew-x-12 rounded-full bg-linear-to-r from-[#00c6cc] via-[#785ae4] to-secondary blur-[100px] right-10 button-0 hidden md:block',
         isDarkMode ? 'opacity-20' : 'opacity-30',
       ]"
     ></header>
     <main
-      class="absolute grid lg:grid-cols-2 grid-cols-1 items-center p-2 lg:p-8"
+      class="absolute mx-20 lg:mx-10 grid lg:grid-cols-2 grid-cols-1 items-center p-2 lg:p-8"
     >
       <header class="text-center lg:text-left">
         <h1 class="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold">
@@ -49,38 +49,29 @@
         </div>
       </header>
       <aside
-        class="container flex justify-center lg:justify-end mt-20 lg:mt-0 items-center flex-wrap"
+        class="container flex justify-center lg:justify-end mt-20 pr-10 lg:mt-0 items-center flex-wrap"
       >
-        <figure
-          class="card relative m-7.5 md:w-105 md:h-105 md:before:w-112.5 w-70 h-87.5 before:w-75 before:h-75 before:border-25 before:border-primary before:shadow-[7px_7px_21px_secondary,-7px_-7px_21px_secondary]"
-        >
-          <div
-            class="relative w-full h-full bg-cover transform translate-x-2.5 translate-y-2.5"
-          >
-            <img src="@\assets\Images\King.jpg" alt="Hero Picture" />
-          </div>
-        </figure>
+       
+       <div class="relative w-full max-w-110 aspect-square">
+  <div class="absolute inset-0 rounded-full bg-gradient-to-r from-[#00c6cc] via-[#785ae4] to-secondary animate-spin"></div>
+    <div class="absolute inset-[10px] rounded-full overflow-hidden bg-white">
+    <img 
+      class="w-full h-full object-cover" 
+      loading="lazy" 
+      src="@/assets/Images/King.jpg" 
+      alt="Hero Picture" 
+    />
+  </div>
+</div>
+       
       </aside>
     </main>
-
-    <svg class="hidden">
-      <filter id="wavy1">
-        <feTurbulence
-          x="0"
-          y="0"
-          baseFrequency="0.2"
-          numOctaves="5"
-          seed="1"
-        ></feTurbulence>
-        <feDisplacementMap in="sourceGraphic" scale="30" />
-      </filter>
-    </svg>
   </section>
 </template>
 
 <script setup>
 import Button from "@/components/UI/Button.vue";
-import { useDarkMode } from "../../composables/DarkMode";
+import { useDarkMode } from "@/composables/DarkMode";
 
 const { isDarkMode } = useDarkMode();
 </script>
@@ -100,4 +91,3 @@ const { isDarkMode } = useDarkMode();
 }
 </style>
 
-```

@@ -65,7 +65,7 @@
 <script setup>
 import { Icon } from "@iconify/vue";
 import { ref } from "vue";
-import { useDarkMode } from "../../composables/DarkMode";
+import { useDarkMode } from "@/composables/DarkMode";
 const isMenuOpen = ref(false);
 const Menu = ref([
   { name: "Services", href: "#services" },

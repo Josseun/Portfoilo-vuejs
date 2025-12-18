@@ -11,8 +11,10 @@
   "dependencies": {
     "@iconify/vue": "^5.0.0",
     "@tailwindcss/vite": "^4.1.18",
+    "aos": "^2.3.4",
     "tailwindcss": "^4.1.18",
-    "vue": "^3.5.24"
+    "vue": "^3.5.24",
+    "vue-countup-v3": "^1.4.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",
