@@ -7,12 +7,12 @@
           isDarkMode ? 'text-white' : 'text-primary',
         ]"
       >
-        Education
+        Experience
       </h3>
     </header>
     <ul class="mt-10 space-y-8 y-8">
       <li
-        v-for="(item, index) in Education"
+        v-for="(item, index) in Experience"
         :key="index"
         class="w-full rounded-xl shadow-lg border bg-gradient-to-t to-[#acac39] from-[#1f1e1c99]"
       >
@@ -23,7 +23,7 @@
             class="w-full lg:w-1/4 flex justify-center lg:justify-start mb-4 lg:mb-0"
           >
             <Icon
-              icon="hugeicons:university"
+              icon="material-symbols-light:work"
               class="text-4xl md:text-6xl lg:text-7xl text-secondary"
             />
           </figure>
@@ -33,10 +33,10 @@
               <h3
                 class="text-xl md:text-2xl font-semibold uppercase text-secondary"
               >
-                {{ item.school }}
+                {{ item.title }}
               </h3>
             </header>
-            <p class="text-sm md:text-base text-white">{{ item.degree }}</p>
+            <p class="text-sm md:text-base text-white">{{ item.company }}</p>
             <p class="text-sm md:text-base text-white">{{ item.duration }}</p>
           </section>
         </article>
@@ -49,16 +49,16 @@ import { useDarkMode } from "@/composables/DarkMode";
 import { ref } from "vue";
 
 const { isDarkMode } = useDarkMode();
-const Education = ref([
+const Experience = ref([
   {
-    duration: "03/2025-03/2026",
-    school: "AltSchool Africa",
-    degree: "Frontend Engineer",
+    duration: "03/2008-70/2011",
+    title: "Frontend Developer",
+    company: "Braudit Africa",
   },
   {
     duration: "03/2008-70/2011",
-    school: "school 2",
-    degree: "Software Engineer",
+    title: "Frontend Developer",
+    company: "Braudit Africa",
   },
 ]);
 </script>

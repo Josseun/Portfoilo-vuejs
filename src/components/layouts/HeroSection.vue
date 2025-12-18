@@ -14,14 +14,14 @@
       ]"
     ></header>
     <main
-      class="absolute mx-20 lg:mx-10 grid lg:grid-cols-2 grid-cols-1 items-center p-2 lg:p-8"
+      class="absolute mx-5 lg:mx-10 grid lg:grid-cols-2 grid-cols-1 items-center p-2 lg:p-8"
     >
       <header class="text-center lg:text-left">
         <h1 class="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold">
           👋 Hi, I'm
           <span
             :class="[
-              'text-secondary stroke-text ',
+              'text-secondary stroke-text',
               isDarkMode ? 'text-stroke-secondary' : 'text-stroke-primary',
             ]"
             >Joshua Oluwaseun</span
@@ -37,7 +37,7 @@
           <a
             href=""
             :class="[
-              'font-semibold rounded-full ml-2 border-2 text-lg w-[10rem] h-[55px] flex justify-center items-center',
+              'font-semibold rounded-full ml-2 border-2 text-lg w-[12rem] h-[55px] flex justify-center items-center',
               isDarkMode
                 ? 'text-secondary border-secondary bg-transparent'
                 : 'bg-white border-primary text-primary',

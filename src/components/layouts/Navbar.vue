@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="flex justify-between items-center p-8 lg:px-12 relative z-20">
-       <div :class="['dark: text-3xl font-black',isDarkMode ? 'text-white' : 'text-primary']">LOGO</div>
+       <div :class="['text-3xl font-black',isDarkMode ? 'text-white' : 'text-primary']">LOGO</div>
 
       <div class="md:hidden z-30">
         <button
@@ -36,7 +36,7 @@
           <li v-for="(item, index) in Menu" :key="index">
             <a
               :href="item.href"
-        :class="['block transition ease-linear md:text-lg lg:text-xl font-bold hover:text-secondary',isDarkMode ? 'text-white' : 'text-primary']"
+        :class="['block transition ease-linear md:text-lg lg:text-xl font-bold text-primary hover:text-secondary',isDarkMode ? 'text-white' : ' text-white lg:text-primary md:text-primary']"
               @click="ScrollToSection(item.href)"
             >
               {{ item.name }}
