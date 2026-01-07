@@ -1,24 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #000957;
-  --color-secondary: #ffeb00;
-}
-
-
-@layer utilities {
-  .stroke-text {
-    --tw-text-opacity: 1;
-    -webkit-text-stroke-width: 1.4px;
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-color: var(--color-secondary);
-  }
-  
-  .text-stroke-primary {
-    -webkit-text-stroke-color: var(--color-primary);
-  }
-  
-  .dark .text-stroke-secondary {
-    -webkit-text-stroke-color: var(--color-secondary);
-  }
+  --color-primary: #181C14;
+  --color-secondary: #00F7FF;
 }

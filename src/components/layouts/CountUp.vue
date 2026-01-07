@@ -28,10 +28,10 @@ import { ref,onMounted } from "vue";
 const { isDarkMode } = useDarkMode();
 
 const numbers =ref([
-    {id:1, number:12, title:'created projects',},
-    {id:2, number:200, title:'projects',},
-    {id:3, number:120, title:'Happy clients',},
-    {id:4, number:5, title:'years',}
+    {id:1, number:0, title:'created projects',},
+    {id:2, number:50, title:'projects',},
+    {id:3, number:0, title:'Happy clients',},
+    {id:4, number:2, title:'years',}
 ])
 
 const statsSection= ref(null);

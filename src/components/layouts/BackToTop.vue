@@ -2,12 +2,9 @@
   <button
     @click="scrollToTop"
     v-if="isVisible"
-    :class="[
-      'fixed bottom-4 right-4 bg-gradient-to-r text-white rounded-full w-12 h-12 flex justify-center items-center text-xl cursor-pointer transition-opacity duration-300 hover:bg-blue-600',
-      isDarkMode ? 'bg-secondary' : 'bg-primary',
-    ]"
+    class="fixed bottom-4 right-4 bg-linear-to-r text-red-600 rounded-full w-12 h-12 flex justify-center items-center text-xl cursor-pointer transition-opacity duration-300 hover:bg-blue-600 bg-secondary group"
   >
-    <Icon icon="line-md:arrow-up" class="font-bold" />
+    <Icon icon="mdi:arrow-up" class="size-6 text-primary animate-bounce" />
   </button>
 </template>
 <script setup>

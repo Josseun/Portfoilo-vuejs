@@ -1,10 +1,7 @@
 <template>
   <button
     @click="onClick"
-    :class="[
-      'relative overflow-hidden rounded-full text-white w-[180px] h-[65px] text-lg font-semibold flex justify-center items-center transition-all duration-300',
-      isDarkMode ? 'bg-white' : 'bg-gray-700',
-    ]"
+    class="relative overflow-hidden rounded-full text-white w-45 h-16.25 text-lg font-semibold flex justify-center items-center transition-all duration-300 bg-white"
   >
     <div
       class="absolute inset-0 scale-[1.06] blur-lg transition-transform duration-300"
@@ -14,16 +11,14 @@
       ></div>
     </div>
     <div
-      class="relative w-[156px] h-[45px] flex justify-center items-center rounded-full bg-secondary text-primary border border-primary"
+      class="relative w-39 h-11.25 flex justify-center items-center rounded-full bg-secondary text-primary border border-primary"
     >
       {{ label }}
     </div>
-  </button>  
+  </button>
 </template>
 
 <script setup>
-import { useDarkMode } from "@/composables/DarkMode";
-
 const props = defineProps({
   label: {
     type: String,
@@ -34,8 +29,6 @@ const props = defineProps({
     default: () => {},
   },
 });
-
-const { isDarkMode } = useDarkMode();
 </script>
 
 <style scoped>

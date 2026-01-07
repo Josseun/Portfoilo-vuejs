@@ -1,36 +1,16 @@
-```vue
 <template>
   <section
     data-aos="zoom-in"
-    class="flex items-center justify-center min-h-screen mt-20 lg:mt-0"
+    class="flex items-center justify-center min-h-screen mt-30 lg:mt-0"
   >
-    <header
-      :class="[
-        'absolute w-1/2 aspect-16/5 -skew-x-12 rounded-full bg-gradient-to-r from-[#00c6cc] via-[#785ae4] to-secondary blur-[100px] left-10 top-0 hidden md:block',
-        isDarkMode ? 'opacity-20 ' : ' opacity-30',
-      ]"
-    ></header>
-    <header
-      :class="[
-        'absolute w-1/2 aspect-16/5 -skew-x-12 rounded-full bg-linear-to-r from-[#00c6cc] via-[#785ae4] to-secondary blur-[100px] right-10 button-0 hidden md:block',
-        isDarkMode ? 'opacity-20' : 'opacity-30',
-      ]"
-    ></header>
     <main
-      class="absolute mx-5 lg:mx-10 grid lg:grid-cols-2 grid-cols-1 items-center p-2 lg:p-8"
+      class="absolute mx-5 lg:mx-10 grid lg:grid-cols-2 grid-cols-1 items-center p-2 lg:p-8 lg:py-0"
     >
       <header class="text-center lg:text-left">
-        <h1 class="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold">
+        <h1 class="mb-6 text-4xl md:text-5xl lg:text-6xl font-bold uppercase">
           👋 Hi, I'm
-          <span
-            :class="[
-              'text-secondary stroke-text',
-              isDarkMode ? 'text-stroke-secondary' : 'text-stroke-primary',
-            ]"
-            >Joshua Oluwaseun</span
-          >
+          <span class="text-secondary uppercase">Joshua Oluwaseun</span>
         </h1>
-        <p  class="text-lg max-w-xl mx-auto lg:mx-0 font-semibold leading-relaxed">Junior Frontend Developer • React • Tailwind CSS • Building Responsive Web Apps</p>
         <p
           class="text-lg max-w-xl mx-auto lg:mx-0 font-semibold leading-relaxed"
         >
@@ -48,12 +28,7 @@
             download
             target="_blank"
             rel="noopener noreferrer"
-            :class="[
-              'font-semibold rounded-full ml-2 border-2 text-lg w-[12rem] h-[55px] flex justify-center items-center',
-              isDarkMode
-                ? 'text-secondary border-secondary bg-transparent'
-                : 'bg-white border-primary text-primary',
-            ]"
+            class="font-semibold rounded-full ml-2 border-2 text-lg w-48 h-13.75 flex justify-center items-center text-secondary border-secondary bg-transparent"
           >
             <Icon icon="line-md:download-loop" class="text-3xl" />
 
@@ -66,10 +41,10 @@
       >
         <div class="relative w-full max-w-110 aspect-square">
           <div
-            class="absolute inset-0 rounded-full bg-gradient-to-r from-[#00c6cc] via-[#785ae4] to-secondary animate-spin"
+            class="absolute inset-0 rounded-full bg-linear-to-r from-[#00c6cc] via-[#785ae4] to-secondary animate-spin"
           ></div>
           <div
-            class="absolute inset-[10px] rounded-full overflow-hidden bg-white"
+            class="absolute inset-2.5 rounded-full overflow-hidden bg-white"
           >
             <img
               class="w-full h-full object-cover"
@@ -86,9 +61,6 @@
 
 <script setup>
 import Button from "@/components/UI/Button.vue";
-import { useDarkMode } from "@/composables/DarkMode";
-
-const { isDarkMode } = useDarkMode();
 </script>
 
 <style scoped>

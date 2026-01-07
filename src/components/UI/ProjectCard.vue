@@ -1,55 +1,36 @@
 <template>
-  <article
-    :class="[
-      'max-w-sm overflow-hidden shadow-lg rounded border border-secondary',
-      isDarkMode ? 'bg-[#ffffff29]' : 'bg-primary',
-    ]"
-  >
+  <article class="w-full h-75 text-white grid md:grid-cols-2 lg:grid-cols-2 border-secondary border p-3 rounded-2xl gap-5 place-items-center">
     <!-- Image Section -->
-    <figure>
-      <img :src="image" :alt="title" class="w-full h-48 object-cover" />
-    </figure>
+<div class="w-full max-w-sm h-sm">
+ <img :src="image" :alt="title" class="object-scale-down w-full h-full rounded-lg" />
+</div>
+   
 
-    <!-- Content Section -->
-    <section class="px-6 py-4">
-      <header>
-        <h3 class="font-bold text-xl mt-2 text-white">{{ title }}</h3>
-      </header>
-      <p class="text-gray-300 text-sm">{{ description }}</p>
-    </section>
+    <div class="">
+      <!-- Content Section -->
+      <section class="px-6 py-4 gap-3 flex flex-col">
+        <header>
+          <h3 class="font-bold text-xl mt-2 text-white font-serif uppercase">
+            {{ title }}
+          </h3>
+        </header>
+        <p class="text-gray-300 text-base font-semibold font-mono">
+          {{ description }}
+        </p>
+      </section>
 
-    <!-- Tags Section -->
-    <footer class="px-6 pt-4 pb-2">
-      <ul class="flex flex-wrap gap-2">
-        <li
-          v-for="(tags, index) in tags"
-          :key="index"
-          :class="[
-            'inline-block rounded-full text-gray-200 px-3 py-1 text-sm font-semibold',
-            isDarkMode ? 'bg-primary' : 'bg-gray-700',
-          ]"
+      <!-- Actions Section -->
+      <div class="px-6 pb-4 flex justify-between items-center">
+        <a
+          :href="liveLink"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-secondary font-semibold hover:underline text-lg flex items-center group"
+          >View Project
+          <Icon class="size-10 text-secondary text-2xl transition-transform duration-300 group-hover:translate-x-2" icon="mdi:arrow-right-thin" />
+          </a
         >
-          #{{ tags }}
-        </li>
-      </ul>
-    </footer>
-
-    <!-- Actions Section -->
-    <div class="px-6 pb-4 flex justify-between items-center">
-      <a
-        :href="liveLink"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-secondary font-semibold hover:underline text-sm"
-        >Live Demo</a
-      >
-      <a
-        :href="codeLink"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-secondary font-semibold hover:underline text-sm"
-        >View code</a
-      >
+      </div>
     </div>
   </article>
 </template>
